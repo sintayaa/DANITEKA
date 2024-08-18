@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daniteka | Berita</title>
+        <link rel="stylesheet" href="styles/beranda.css" />
+        <script src="scripts/berita.js"></script>
+        <!-- icon -->
+        <link rel="shortcut icon" href="images/Fav-icon 4.svg" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+            }
+
+            .navbar .navdiv {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 7px 20px;
+            }
+
+            .navbar .btnlogin a {
+                background-color: #0a1936;
+                color: #f0fae3;
+                border-radius: 8px;
+            }
+
+            .logo a:hover {
+                color: #0a1936;
+                text-decoration: none;
+            }
+
+            /* Other styles here */
+
+            /* Modal Styles */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0, 0, 0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+                padding-top: 60px;
+            }
+            .col {
+                margin-bottom: 1.5rem; /* Adjust the spacing as needed */
+            }
+
+            .notification-popup {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #4caf50;
+                color: white;
+                padding: 15px;
+                border-radius: 5px;
+                opacity: 1;
+                transition: opacity 0.3s;
+            }
+            .container {
+                padding-left: 15px; /* Adjust the padding as needed */
+                padding-right: 15px; /* Adjust the padding as needed */
+            }
+            .row {
+                margin-left: -15px; /* Negative margin to offset padding */
+                margin-right: -15px; /* Negative margin to offset padding */
+            }
+            .col {
+                padding-left: 15px; /* Adjust the padding as needed */
+                padding-right: 15px; /* Adjust the padding as needed */
+                margin-bottom: 1.5rem; /* Adjust the spacing as needed */
+            }
+
+            .card-body {
+                padding: 1.5rem;
+            }
+            .card {
+                margin-bottom: 2rem; /* Menambah jarak di bawah kartu */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navdiv">
+                    <div class="logo"><a href="#">DANITEKA</a></div>
+                    <ul>
+                        <li>
+                            <a href="beranda.html">Beranda</a>
+                        </li>
+                        <li><a class="aktif" href="berita.html">Berita</a></li>
+                        <li>
+                            <a
+                                href="https://join.slack.com/t/daniteka/shared_invite/zt-2nipc37uu-NB27HIP2GqxfZMWmInEjhw"
+                                target="_blank"
+                                >Forum</a
+                            >
+                        </li>
+                        <li><a href="alumni.html">Alumni</a></li>
+                        <div class="btnlogin">
+                            <li><a href="login.html">Masuk</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Modal HTML -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" data-target="#modal1">&times;</span>
+                <img
+                    src="images/beritavalid1.jpg"
+                    alt="Modal Image"
+                    class="modal-img"
+                />
+                <h2>Mahasiswa Informatika LULUS SM-KPN</h2>
+                <p>
+                    Selamat atas diterimanya ananda menjadi calon mahasiswa baru
+                    Teknik Informatika Jurusan Teknik Elektro Politeknik Negeri
+                    Pontianak Tahun 2024 melalui jalur SM-KPN! Perjuangan dan
+                    usaha kaliah berbuah manis dengan berhasil lulus melalui
+                    jalur SM-KPN dengan pernuh perjuangan dan kerja kesar,
+                    tentunya Adik-Adik adalah orang terpilih dari sekian banyak
+                    orang yang berjungan. Jangan sia-siakan kesempatan baik ini
+                    untuk meraih cita-cita di masa yang akan datang...
+                </p>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" data-target="#modal2">&times;</span>
+                <img
+                    src="images/beritavalid2.jpg"
+                    alt="Modal Image"
+                    class="modal-img"
+                />
+                <h2>PERSONI XIV</h2>
+                <p>
+                    Halo Sobat Polnep Masih ingat kah Tahun 2022 Kontingen
+                    Polnep Berhasil Menduduki Peringkat 2 umum pada Porseni
+                    Politeknik ke XIII di Politekniik Negeri Banjarmasin. Tahun
+                    2024 kontingen polnep kembali bersiap untuk bertanding
+                    meraih kemenangan di Porseni Politeknik ke XIV yang di
+                    laksanakan di Politeknik Negeri Malang... Semoga Kontingen
+                    Polnep dapat meraih kembali kesuksesan di porseni tahun 2022
+                    atau lebih baik lagi menjadi juara 1 umum...
+                </p>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" data-target="#modal3">&times;</span>
+                <img
+                    src="images/beritavalid3.jpg"
+                    alt="Modal Image"
+                    class="modal-img"
+                />
+                <h2>D3 Teknik Informatika Prodi dengan minat Tertinggi</h2>
+                <p>
+                    Assalamualaikum Sobat Polnep Keluarga Besar Program Studi
+                    Teknik Informatika mengucapkan terima kasih kepada
+                    masyarakat dan calon mahasiswa baru telah memiliki Program
+                    Studi Teknik Informatika pada pilihan 1 atau pilihan 2 dan
+                    seterusnya Pada Tahun 2024 ini Program Studi kembali
+                    menempati urutan Pertama sebagai program studi dengan
+                    peminat tertinggi kelompok Rekaayasa dengan Jumlah Pendaftar
+                    sebanyak 330 orang dengan daya tampung 49 orang (keketatan
+                    persaingan 1 : 6.74 ) Mimin ucapin selamat yang telah
+                    dinyatakan lulus dan berjuang sampai detik ini.
+                </p>
+            </div>
+        </div>
+
+       
+
+        <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-ride="carousel"
+        >
+            <ol class="carousel-indicators">
+                <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="0"
+                    class="active"
+                ></li>
+                <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="1"
+                ></li>
+                <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="2"
+                ></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img
+                        src="images/beritavalid1.jpg"
+                        class="d-block w-100"
+                        alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="images/beritavalid2.jpg"
+                        class="d-block w-100"
+                        alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="images/beritavalid3.jpg"
+                        class="d-block w-100"
+                        alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="images/beritavalid4.jpg"
+                        class="d-block w-100"
+                        alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="images/beritavalid5.jpg"
+                        class="d-block w-100"
+                        alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="images/beritavalid6.jpg"
+                        class="d-block w-100"
+                        alt="..."
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        src="images/Kelomps.jpg"
+                        class="d-block w-100"
+                        alt="..."
+                    />
+                </div>
+            </div>
+            <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+            >
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+            >
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div class="container-berita">
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+                <div class="col-mb4">
+                    <div class="card h-100" style="width: 25rem">
+                        <img
+                            src="images/beritavalid1.jpg"
+                            class="card-img-top fixed-size-img"
+                            alt="..."
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Mahasiswa Polnep LULUS
+                                <br />SM - KPN <br />
+                            </h5>
+                            <p class="card-text">
+                                Diterimanya ananda menjadi calon mahasiswa baru
+                                Teknik Informatika Jurusan Teknik Elektro
+                                Politeknik Negeri Pontianak Tahun 2024 melalui
+                                jalur SM-KPN!
+                            </p>
+                            <button
+                                class="btn btn-primary open-modal-btn"
+                                data-target="#modal1"
+                            >
+                                Baca Selengkapnya
+                            </button>
+                            <button class="btn btn-danger delete-news-btn">
+                                Hapus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-mb4">
+                    <div class="card h-100" style="width: 25rem">
+                        <img
+                            src="images/beritavalid2.jpg"
+                            class="card-img-top fixed-size-img"
+                            alt="..."
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">PORSENI XIV</h5>
+                            <p class="card-text">
+                                Masih ingat kah Tahun 2022 Kontingen Polnep
+                                Berhasil Menduduki Peringkat 2 umum pada Porseni
+                                Politeknik ke XIII di Politekniik Negeri
+                                Banjarmasin.
+                            </p>
+                            <button
+                                class="btn btn-primary open-modal-btn"
+                                data-target="#modal2"
+                            >
+                                Baca Selengkapnya
+                            </button>
+                            <button class="btn btn-danger delete-news-btn">
+                                Hapus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-mb4">
+                    <div class="card h-100" style="width: 25rem">
+                        <img
+                            src="images/beritavalid3.jpg"
+                            class="card-img-top fixed-size-img"
+                            alt="..."
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Prodi dengan Minat Tertinggi
+                            </h5>
+                            <p class="card-text">
+                                Pada Tahun 2024 ini Program Studi kembali
+                                menempati urutan Pertama sebagai program studi
+                                dengan peminat tertinggi kelompok Rekayasa
+                            </p>
+                            <button
+                                class="btn btn-primary open-modal-btn"
+                                data-target="#modal3"
+                            >
+                                Baca Selengkapnya
+                            </button>
+                            <button class="btn btn-danger delete-news-btn">
+                                Hapus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="container mt-4">
+            <div class="d-flex justify-content-center mb-4">
+                <button class="btn btn-success" id="uploadNewsBtn">
+                    Upload Berita
+                </button>
+            </div>
+        </div>
+
+        <!-- Upload News Modal -->
+        <div id="uploadNewsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" data-target="#uploadNewsModal"
+                    >&times;</span
+                >
+                <h2>Upload Berita Baru</h2>
+                <form id="uploadNewsForm">
+                    <div class="form-group">
+                        <label for="newsTitle">Judul Berita:</label>
+                        <input
+                            type="text"
+                            id="newsTitle"
+                            class="form-control"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="newsImage">Gambar:</label>
+                        <input
+                            type="file"
+                            id="newsImage"
+                            name="image"
+                            accept="image/*"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="newsContent">Isi Berita:</label>
+                        <textarea
+                            id="newsContent"
+                            class="form-control"
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Upload
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>
+                        Selamat datang di situs resmi Alumni Teknik Informatika.
+                        Kami adalah komunitas yang berdedikasi untuk
+                        menghubungkan alumni, mendukung pengembangan karir, dan
+                        memajukan pendidikan teknologi dan industri.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Media Sosial</h3>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://www.youtube.com/@mediapolnep"
+                                aria-label="Youtube"
+                                target="_blank"
+                                ><i class="fab fa-youtube"></i> mediapolnep</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.tiktok.com/@mediapolnep"
+                                aria-label="Tiktok"
+                                target="_blank"
+                                ><i class="fab fa-tiktok"></i> mediapolnep</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/teknik.informatika.polnep/"
+                                aria-label="Instagram"
+                                target="_blank"
+                                ><i class="fab fa-instagram"></i>
+                                teknik.informatika.polnep</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li>
+                            <a href="#" aria-label="Email"
+                                ><i class="fas fa-envelope"></i>
+                                kampus@polnep.ac.id</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Phone"
+                                ><i class="fas fa-phone"></i> +62 561 736180</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://wa.me/6281256074059"
+                                aria-label="WhatsApp"
+                                target="_blank"
+                            >
+                                <i class="fab fa-whatsapp"></i> +6281256074059
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://maps.app.goo.gl/ujg8vtREhgAZ4Ug8A"
+                                aria-label="Address"
+                                target="_blank"
+                                ><i class="fas fa-map-marker-alt"></i> Jl.
+                                Jenderal Ahmad Yani, <br />Bansir Laut,
+                                Tenggara, <br />Kota Pontianak, <br />Kalimantan
+                                Barat</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Daniteka. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <button onclick="scrollToTop()" id="scrollUpBtn" title="Go to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Function to show a success notification
+                function showSuccessNotification(message) {
+                    const notification = document.createElement("div");
+                    notification.className = "notification-popup";
+                    notification.innerText = message;
+
+                    document.body.appendChild(notification);
+
+                    setTimeout(() => {
+                        notification.style.opacity = "0";
+                        setTimeout(
+                            () => document.body.removeChild(notification),
+                            300,
+                        );
+                    }, 2000);
+                }
+
+                // Function to handle the deletion of news items
+                function handleDeleteNews() {
+                    document
+                        .querySelectorAll(".delete-news-btn")
+                        .forEach((btn) => {
+                            btn.addEventListener("click", function () {
+                                const card = this.closest(".card");
+                                if (card) {
+                                    const title = card.querySelector(".card-title").innerText;
+                                    card.parentNode.removeChild(card);
+                                    removeNewsFromLocalStorage(title); // Remove from localStorage
+                                    showSuccessNotification("Berita berhasil dihapus!");
+                                }
+                            });
+                        });
+                }
+
+                // Function to save news to localStorage
+                function saveNewsToLocalStorage(title, imageUrl, content) {
+                    let newsItems = JSON.parse(localStorage.getItem('newsItems')) || [];
+                    newsItems.push({ title, imageUrl, content, timestamp: Date.now() });
+                    localStorage.setItem('newsItems', JSON.stringify(newsItems));
+                }
+
+                // Function to load news from localStorage
+                function loadNewsFromLocalStorage() {
+                    let newsItems = JSON.parse(localStorage.getItem('newsItems')) || [];
+                    newsItems.sort((a, b) => b.timestamp - a.timestamp); // Sort by newest first
+
+                    const rowElement = document.querySelector(".container-berita .row");
+                    if (rowElement) {
+                        newsItems.forEach(item => {
+                            const newsCard = document.createElement("div");
+                            newsCard.className = "col mb-4"; // Sama seperti kartu lain
+                            newsCard.innerHTML = `
+                                <div class="card h-100" style="width: 25rem"> <!-- Ganti ukuran sesuai dengan kartu lain -->
+                                    <img class="card-img-top fixed-size-img" src="${item.imageUrl}" alt="${item.title}" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">${item.title}</h5>
+                                        <button class="btn btn-primary open-modal-btn" data-target="#${item.title.replace(/\s+/g, '')}">
+                                            Baca Selengkapnya
+                                        </button>
+                                        <button class="btn btn-danger delete-news-btn">
+                                            Hapus
+                                        </button>
+                                    </div>
+                                </div>
+                            `;
+                            rowElement.appendChild(newsCard);
+
+                            const newModal = document.createElement("div");
+                            newModal.id = item.title.replace(/\s+/g, '');
+                            newModal.className = "modal";
+                            newModal.innerHTML = `
+                                <div class="modal-content">
+                                    <span class="close" data-target="#${item.title.replace(/\s+/g, '')}">&times;</span>
+                                    <img src="${item.imageUrl}" alt="${item.title}" class="modal-img" />
+                                    <h2>${item.title}</h2>
+                                    <p>${item.content}</p>
+                                </div>
+                            `;
+                            document.body.appendChild(newModal);
+                        });
+                        reapplyModalFunctionality();
+                    }
+                }
+
+                // Function to remove news from localStorage
+                function removeNewsFromLocalStorage(title) {
+                    let newsItems = JSON.parse(localStorage.getItem('newsItems')) || [];
+                    newsItems = newsItems.filter(item => item.title !== title);
+                    localStorage.setItem('newsItems', JSON.stringify(newsItems));
+                }
+
+                // Open the Upload News Modal
+                document
+                    .getElementById("uploadNewsBtn")
+                    .addEventListener("click", function () {
+                        document.getElementById("uploadNewsModal").style.display = "block";
+                    });
+
+                // Handle the form submission
+                document
+                    .getElementById("uploadNewsForm")
+                    .addEventListener("submit", function (event) {
+                        event.preventDefault(); // Prevent page reload
+
+                        // Get the form data
+                        const title = document.getElementById("newsTitle").value;
+                        const content = document.getElementById("newsContent").value;
+                        const imageFile = document.getElementById("newsImage").files[0];
+
+                        if (imageFile) {
+                            const reader = new FileReader();
+
+                            reader.onload = function (e) {
+                                const imageUrl = e.target.result;
+                                const timestamp = Date.now(); // Get the current timestamp
+
+                                // Create a unique ID for the modal
+                                const uniqueModalId = `newModal${timestamp}`;
+
+                                // Create a new news card
+                                const newsCard = document.createElement("div");
+                                newsCard.className = "col mb-4"; // Sama seperti kartu lain
+                                newsCard.innerHTML = `
+                                    <div class="card h-100" style="width: 25rem"> <!-- Ganti ukuran sesuai dengan kartu lain -->
+                                        <img class="card-img-top fixed-size-img" src="${imageUrl}" alt="${title}" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">${title}</h5>
+                                            <button class="btn btn-primary open-modal-btn" data-target="#${uniqueModalId}">
+                                                Baca Selengkapnya
+                                            </button>
+                                            <button class="btn btn-danger delete-news-btn">
+                                                Hapus
+                                            </button>
+                                        </div>
+                                    </div>
+                                `;
+
+                                // Save to localStorage
+                                saveNewsToLocalStorage(title, imageUrl, content);
+
+                                // Close the modal
+                                document.getElementById("uploadNewsModal").style.display = "none";
+
+                                // Clear the form
+                                document.getElementById("uploadNewsForm").reset();
+
+                                // Add the new news card to the top of the row
+                                const rowElement = document.querySelector(".container-berita .row");
+                                if (rowElement) {
+                                    rowElement.insertBefore(newsCard, rowElement.firstChild);
+                                } else {
+                                    console.error("Element .container .row not found");
+                                }
+
+                                // Create a new modal for the uploaded news
+                                const newModal = document.createElement("div");
+                                newModal.id = uniqueModalId;
+                                newModal.className = "modal";
+                                newModal.innerHTML = `
+                                    <div class="modal-content">
+                                        <span class="close" data-target="#${uniqueModalId}">&times;</span>
+                                        <img src="${imageUrl}" alt="${title}" class="modal-img" />
+                                        <h2>${title}</h2>
+                                        <p>${content}</p>
+                                    </div>
+                                `;
+                                document.body.appendChild(newModal);
+
+                                // Show success notification
+                                showSuccessNotification("Berita berhasil diupload!");
+
+                                // Reapply modal functionality and delete functionality
+                                reapplyModalFunctionality();
+                            };
+
+                            // Read the image file as a Data URL
+                            reader.readAsDataURL(imageFile);
+                        }
+                    });
+
+                // Function to reapply modal functionality
+                function reapplyModalFunctionality() {
+                    document.querySelectorAll(".open-modal-btn").forEach((btn) => {
+                        btn.addEventListener("click", function () {
+                            var modal = document.querySelector(this.getAttribute("data-target"));
+                            if (modal) {
+                                modal.style.display = "block";
+                            }
+                        });
+                    });
+
+                    document.querySelectorAll(".close").forEach((btn) => {
+                        btn.addEventListener("click", function () {
+                            var modal = document.querySelector(this.getAttribute("data-target"));
+                            if (modal) {
+                                modal.style.display = "none";
+                            }
+                        });
+                    });
+
+                    window.onclick = function (event) {
+                        document.querySelectorAll(".modal").forEach((modal) => {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        });
+                    };
+
+                    // Apply delete functionality
+                    handleDeleteNews();
+                }
+
+                // Initialize modal functionality on page load
+                reapplyModalFunctionality();
+
+                // Load news from localStorage on page load
+                loadNewsFromLocalStorage();
+
+                // Scroll to top button
+                const scrollToTopBtn = document.getElementById("scrollUpBtn");
+
+                window.onscroll = function () {
+                    if (
+                        document.body.scrollTop > 20 ||
+                        document.documentElement.scrollTop > 20
+                    ) {
+                        scrollToTopBtn.style.display = "block";
+                    } else {
+                        scrollToTopBtn.style.display = "none";
+                    }
+                };
+
+                scrollToTopBtn.addEventListener("click", function () {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                });
+            });
+
+
+        </script>
+    </body>
+</html>

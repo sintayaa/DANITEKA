@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daniteka | Alumni</title>
+        <link rel="stylesheet" href="styles/alumni.css" />
+        <link rel="shortcut icon" href="images/Fav-icon 4.svg" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
+        />
+        <script src="scripts/user.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navdiv">
+                    <div class="logo"><a href="#">DANITEKA</a></div>
+                    <ul>
+                        <li>
+                            <a href="indexlogin.html">Beranda</a>
+                        </li>
+                        <li>
+                            <a href="beritalogin.html">Berita</a>
+                        </li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li>
+                            <a class="aktif" href="alumnilogin.html">Alumni</a>
+                        </li>
+                        <li class="dropdown">
+                            <img
+                                src="images/profil1.png"
+                                alt="Dropdown"
+                                class="dropbtn"
+                            />
+                            <div class="dropdown-content">
+                                <a class="profile" id="namaAlumni"
+                                    >Nama Alumni</a
+                                >
+                                <a class="edit-profile" href="dashboard.html"
+                                    >Edit Profile</a
+                                >
+                                <a class="logout" href="logout.html">Keluar</a>
+                                <!-- <a href="#" id="namaAlumni" class="profile"
+                                        >Nama Alumni</a
+                                    >
+                                    <a href="dashboard.html" class="edit-profile"
+                                        >Edit Profile</a
+                                    >
+                                    <a href="#" id="btnkeluar" class="logout"
+                                        >Keluar</a
+                                    > -->
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="alumni-section">
+                <div class="summary-cards">
+                    <div class="card" id="jumlahAlumni">
+                        350<br />Jumlah Alumni
+                    </div>
+                    <div class="card" id="totalResponden">
+                        100<br />Total Responden
+                    </div>
+                    <div class="card" id="alumniValid">
+                        150<br />Alumni Valid
+                    </div>
+                    <div class="card" id="alumniBelumValid">
+                        200<br />Alumni Belum Valid
+                    </div>
+                </div>
+
+                <table class="alumni-table" id="alumniTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Kelas</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Tahun Angkatan</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <div class="filter-container">
+                    <label for="yearFilter">Filter:</label>
+                    <select id="yearFilter">
+                        <option value="">Tahun Angkatan</option>
+                        <!-- Years will be dynamically populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>
+                        Selamat datang di situs resmi Alumni Teknik Informatika.
+                        Kami adalah komunitas yang berdedikasi untuk
+                        menghubungkan alumni, mendukung pengembangan karir, dan
+                        memajukan pendidikan teknologi dan industri.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Media Sosial</h3>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://www.youtube.com/@mediapolnep"
+                                aria-label="Youtube"
+                                target="_blank"
+                                ><i class="fab fa-youtube"></i> mediapolnep</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.tiktok.com/@mediapolnep"
+                                aria-label="Tiktok"
+                                target="_blank"
+                                ><i class="fab fa-tiktok"></i> mediapolnep</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/teknik.informatika.polnep/"
+                                aria-label="Instagram"
+                                target="_blank"
+                                ><i class="fab fa-instagram"></i>
+                                teknik.informatika.polnep</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li>
+                            <a href="#" aria-label="Email"
+                                ><i class="fas fa-envelope"></i>
+                                kampus@polnep.ac.id</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Phone"
+                                ><i class="fas fa-phone"></i> +62 561 736180</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://wa.me/6281256074059"
+                                aria-label="WhatsApp"
+                                target="_blank"
+                            >
+                                <i class="fab fa-whatsapp"></i> +6281256074059
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://maps.app.goo.gl/ujg8vtREhgAZ4Ug8A"
+                                aria-label="Address"
+                                target="_blank"
+                                ><i class="fas fa-map-marker-alt"></i> Jl.
+                                Jenderal Ahmad Yani, <br />Bansir Laut,
+                                Tenggara, <br />Kota Pontianak, <br />Kalimantan
+                                Barat</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Daniteka. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <button onclick="scrollToTop()" id="scrollUpBtn" title="Go to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script>
+            loadProfileImage();
+            document.addEventListener("DOMContentLoaded", function () {
+                let alumniData = [];
+                let table;
+
+                function loadData() {
+                    fetch("assets/alumni.xlsx")
+                        .then((response) => response.arrayBuffer())
+                        .then((data) => {
+                            const workbook = XLSX.read(data, { type: "array" });
+                            const firstSheetName = workbook.SheetNames[0];
+                            const worksheet = workbook.Sheets[firstSheetName];
+                            alumniData = XLSX.utils.sheet_to_json(worksheet);
+
+                            // Filter out rows with empty names
+                            alumniData = alumniData.filter(
+                                (alumni) =>
+                                    alumni["NAMA MAHASISWA"] &&
+                                    alumni["NAMA MAHASISWA"].trim() !== "",
+                            );
+
+                            // Populate the year filter dropdown
+                            const years = [
+                                ...new Set(
+                                    alumniData.map(
+                                        (alumni) => alumni["Tahun Angkatan"],
+                                    ),
+                                ),
+                            ];
+                            const yearFilter =
+                                document.getElementById("yearFilter");
+                            years.forEach((year) => {
+                                const option = document.createElement("option");
+                                option.value = year;
+                                option.text = year;
+                                yearFilter.appendChild(option);
+                            });
+
+                            // Initialize DataTable
+                            table = $("#alumniTable").DataTable({
+                                data: alumniData, // Initial data
+                                columns: [
+                                    {
+                                        data: null,
+                                        render: (data, type, row, meta) =>
+                                            meta.row + 1,
+                                    },
+                                    { data: "NIM" },
+                                    { data: "NAMA MAHASISWA" },
+                                    { data: "KELAS" },
+                                    { data: "Jenis Kelamin" },
+                                    { data: "Tahun Angkatan" },
+                                ],
+                            });
+
+                            // Filter table based on year selection
+                            document
+                                .getElementById("yearFilter")
+                                .addEventListener("change", filterTable);
+
+                            function filterTable() {
+                                const selectedYear =
+                                    document.getElementById("yearFilter").value;
+
+                                const filtered = alumniData.filter((alumni) => {
+                                    const yearMatch = selectedYear
+                                        ? alumni["Tahun Angkatan"] ===
+                                          selectedYear
+                                        : true;
+                                    return yearMatch;
+                                });
+
+                                table.clear().rows.add(filtered).draw();
+
+                                updateSummaryCards(filtered);
+                            }
+
+                            // Set the initial values for the summary cards
+                            updateSummaryCards(alumniData);
+                        });
+                }
+
+                function updateSummaryCards(data) {
+                    // Update Jumlah Alumni
+                    document.getElementById("jumlahAlumni").innerHTML =
+                        `${data.length}<br />Jumlah Alumni`;
+
+                    // Update Total Responden (those who completed the tracer study)
+                    document.getElementById("totalResponden").innerHTML = `${
+                        data.filter(
+                            (alumni) =>
+                                alumni["Tracer Study"] === "Sudah Mengisi",
+                        ).length
+                    }<br />Total Responden`;
+
+                    // Update Alumni Valid (those who have an account)
+                    const alumniValidCount = data.filter(
+                        (alumni) => alumni["Akun"] === "Sudah Ada",
+                    ).length;
+
+                    document.getElementById("alumniValid").innerHTML =
+                        `${alumniValidCount}<br />Alumni Valid`;
+
+                    // Update Alumni Belum Valid (those who do not have an account)
+                    const alumniBelumValidCount = data.filter(
+                        (alumni) => alumni["Akun"] !== "Sudah Ada",
+                    ).length;
+
+                    document.getElementById("alumniBelumValid").innerHTML =
+                        `${alumniBelumValidCount}<br />Alumni Belum Valid`;
+                }
+
+                loadData();
+            });
+
+            document
+                .getElementById("btnkeluar")
+                .addEventListener("click", function () {
+                    logoutUser(); // Panggil fungsi logoutUser dari user.js saat tombol logout diklik
+                });
+
+            // Panggil fungsi displayUsername saat halaman dimuat
+            displayUsername();
+
+            // Scroll to top functionality
+            const scrollUpBtn = document.getElementById("scrollUpBtn");
+
+            window.onscroll = function () {
+                if (window.scrollY > 200) {
+                    scrollUpBtn.style.display = "block";
+                } else {
+                    scrollUpBtn.style.display = "none";
+                }
+            };
+
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        </script>
+    </body>
+</html>

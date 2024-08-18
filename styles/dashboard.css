@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #47937B;
+    font-family: "Poppins", sans-serif;
+}
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: #F0FAE3;
+    padding: 0 15px;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo a {
+    font-size: 35px;
+    font-weight: bolder;
+    color: #0A1936;
+}
+
+.navdiv a {
+    text-decoration: none;
+}
+
+.navdiv ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navdiv li {
+    display: inline;
+}
+
+.navdiv li a {
+    display: block;
+    color: #0A1936;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navdiv .btnlogin a {
+    color: #F0FAE3;
+    background-color: #0A1936;
+    border-radius: 10px;
+    padding: 13px 15px;
+}
+
+.navdiv li a:hover {
+    background-color: #0A1936;
+    color: #F0FAE3;
+    border-radius: 10px;
+}
+
+.navdiv .aktif {
+    background-color: #0A1936;
+    color: #F0FAE3;
+    border-radius: 10px;
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    /* background-color: red; */
+}
+
+li.dropdown {
+    display: inline-block;
+    position: relative;
+    /* Required for dropdown positioning */
+}
+
+.dropdown-content {
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+img.dropbtn {
+    width: 50px;
+    /* Adjust as needed */
+    height: 50px;
+    /* Adjust as needed */
+    border-radius: 50%;
+    /* Optional: makes the image round */
+}
+
+.dropdown-content a.profile {
+    pointer-events: none;
+    /* Disable hover and clicking */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #cccccc;
+    /* Same background color as the dropdown */
+    color: #0A1936;
+    /* Text color to match the dropdown */
+}
+
+/* Ensure no hover effect on the profile menu item */
+.dropdown-content a.profile:hover {
+    background-color: #0A1936;
+    /* Same background color as the dropdown */
+    color: #F0FAE3;
+    /* Text color to match the dropdown */
+}
+
+
+.dropdown-content a.logout {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Remove border radius on hover */
+
+.dropdown-content a.logout:hover {
+    border-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.container {
+    max-width: 600px;
+    padding: 60px;
+    padding-top: 20px;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    background-color: #F0FAE3;
+    border-radius: 15px;
+    color: #0A1936;
+}
+
+.form-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-dashboard .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-dashboard label {
+    width: 200px;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.form-dashboard input,
+.form-dashboard select {
+    flex: 1;
+    padding: 12px;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn_simpan {
+    background-color: #0A1936;
+    color: #F0FAE3;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_simpan:hover {
+    background-color: #07041f;
+    color: #47937B;
+}
+
+
+/* Footer */
+footer {
+    background-color: #0A1936;
+    color: #F0FAE3;
+    padding: 50px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0A1936;
+    color: #F0FAE3;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+.footer-section p,
+.footer-section ul {
+    text-align: justify;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    display: table;
+    /* Centers the ul */
+    margin: 0 auto;
+    /* Ensures ul is centered */
+}
+
+.footer-section ul li {
+    text-align: left;
+    /* Aligns text to the left */
+    margin: 5px 0;
+    /* Adds margin to li elements */
+}
+
+.footer-section ul li:hover {
+    text-decoration: underline;
+}
+
+.footer-section ul li a {
+    color: #F0FAE3;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #25D366;
+    /* Changes color on hover */
+}
+
+.fas.fa-map-marker-alt:hover {
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}

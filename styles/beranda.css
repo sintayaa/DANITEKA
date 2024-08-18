@@ -1,0 +1,773 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    margin: auto;
+    background-color: #47937B;
+    font-family: "Poppins", sans-serif;
+}
+
+* {
+    text-decoration: none;
+}
+
+header {
+    position: -webkit-sticky;
+    /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: #F0FAE3;
+    font-family: "Poppins", sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+}
+
+.logo a {
+    font-size: 35px;
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    color: #0A1936;
+}
+
+.navdiv a button {
+    background-color: #F0FAE3;
+    width: 100%;
+    height: 100%;
+    color: #0A1936;
+    border-radius: 10px;
+    border-color: #0A1936;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    padding: 13px 15px;
+}
+
+.navdiv a button:hover {
+    background-color: #0A1936;
+    color: #F0FAE3;
+
+}
+
+.navdiv ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navdiv li {
+    display: inline;
+}
+
+.navdiv li a {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    color: #0A1936;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btnlogin li a {
+    color: #F0FAE3;
+    background-color: #0A1936;
+    border-radius: 10px;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: flex-start;
+    /* Align items to the left */
+}
+
+.btn-tracerstudy {
+    background-color: #F0FAE3;
+    color: #0a1936;
+    /* Text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.btn-tracerstudy:hover {
+    background-color: #0a1936;
+    /* Background color on hover */
+    color: white;
+    /* Text color on hover */
+}
+
+
+/* Change the link color to #111 (black) on hover */
+.navdiv li a:hover {
+    background-color: #0A1936;
+    font-family: "Poppins", sans-serif;
+    color: #F0FAE3;
+    border-radius: 10px;
+}
+
+.navdiv li a:hover:not(.aktif) {
+    background-color: #0A1936;
+}
+
+.navdiv .aktif {
+    background-color: #0A1936;
+    font-family: "Poppins", sans-serif;
+    color: #F0FAE3;
+    border-radius: 10px;
+}
+
+/* Homepage */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-shadow: 4px 5px 6px rgba(0, 0, 0, 0.83);
+}
+
+.hero-text h2 {
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    font-size: 70px;
+    margin: 0;
+}
+
+.hero-text p {
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    font-size: medium;
+    margin: 10px 0;
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    word-spacing: 0.4px;
+    text-shadow: 4px 5px 6px rgba(0, 0, 0, 0.83);
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    background-color: #F0FAE3;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box h3 {
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.feature-box p {
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.feature-box a {
+    color: #FF6347;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+
+}
+
+.feature-box a:hover {
+    color: #FF4500;
+}
+
+/* Berita */
+.content {
+    padding: 20px;
+
+}
+
+/* Konten modal */
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    top: 10%;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border: 1px solid #888;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: modalopen 0.4s;
+    padding: 20px;
+    z-index: 1051;
+    background-color: #fefefe;
+}
+
+.fixed-size-img {
+    width: 100%;
+    /* Atur lebar sesuai dengan lebar card */
+    height: 400px;
+    /* Atur tinggi tetap */
+    object-fit: cover;
+    /* Memastikan gambar sesuai tanpa merusak rasio */
+}
+
+/* Latar belakang modal */
+/* .modal {
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+} */
+
+/* Animasi untuk modal */
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tombol close */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: -10px;
+    margin-top: -10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* .modal-body {
+    padding: 10px 0;
+    font-size: 16px;
+} */
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.modal-footer button {
+    background-color: #0a1936;
+    color: #f0fae3;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer button:hover {
+    background-color: #f0fae3;
+    color: #0a1936;
+}
+
+/* Adjusting the carousel image size */
+.carousel-inner img {
+    width: 100%;
+    height: 550px;
+}
+
+.carousel {
+    margin-bottom: 20px;
+    /* Add space below the carousel */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn {
+    display: self;
+    align-self: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Mengatur kartu */
+.card {
+    padding: 1rem;
+    color: #1ad9ff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    margin-top: 1rem;
+    color: black;
+}
+
+.card-subtitle {
+    color: black;
+}
+
+.card-text {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: black;
+}
+
+.card-img-overlay {
+    padding: 20px;
+}
+
+.card-group {
+    margin: 10px;
+
+}
+
+
+/* Animasi scroll yang halus */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Gaya untuk modal */
+/* .modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.15s linear;
+} */
+
+/* .scrollUpBtn:hover {
+    background-color: #333;
+    /* Ubah warna tombol saat dihover */
+
+
+/* CSS untuk tombol scroll up */
+#scrollUpBtn {
+    display: none;
+    /* Mulai dengan tidak ditampilkan */
+    position: fixed;
+    /* Tetap di posisi yang sama saat menggulir */
+    bottom: 20px;
+    /* Jarak dari bawah halaman */
+    left: 20px;
+    /* Pindahkan tombol ke sebelah kiri */
+    z-index: 99;
+    /* Pastikan tombol berada di atas elemen lainnya */
+    font-size: 18px;
+    /* Ukuran teks tombol */
+    border: #0a1936;
+    /* Hapus border tombol */
+    outline: #0a1936;
+    /* Hapus outline tombol */
+    background-color: #f0fae3;
+    /* Warna latar belakang tombol */
+    color: #0a1936;
+    /* Warna teks tombol */
+    cursor: pointer;
+    /* Tampilkan kursor pointer */
+    padding: 10px;
+    /* Padding di dalam tombol */
+    border-radius: 50%;
+    /* Membuat tombol berbentuk bulat */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    /* Tambahkan bayangan untuk efek mengambang */
+    transition: background-color 0.3s ease;
+    /* Efek transisi warna latar belakang */
+}
+
+#scrollUpBtn:hover {
+    background-color: #0a1936;
+    /* Ubah warna tombol saat dihover */
+    color: #f0fae3;
+}
+
+#scrollUpBtn i {
+    font-size: 25px;
+    /* Ukuran ikon */
+}
+
+/* Forum */
+.container-editor {
+    display: none;
+}
+
+.discord-widget-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.discord-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7289da;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    margin-top: 10px;
+}
+
+.discord-button:hover {
+    background-color: #5865f2;
+}
+
+/* Alumni */
+.alumni-section {
+    padding: 20px;
+    background-color: #47937B;
+
+    text-align: center;
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #0A1936;
+    /* Warna kartu sesuai gambar */
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 10px;
+    flex: 1;
+    font-size: 24px;
+    text-align: center;
+}
+
+input {
+    padding: 15px;
+    width: 85.5%;
+    border: none;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13.7px;
+}
+
+select {
+    padding: 15px;
+    width: 10%;
+    border: none;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13.7px;
+}
+
+.alumni-table {
+    width: 98%;
+    border-collapse: collapse;
+    margin: 20px 10px;
+    background-color: #e6fff9;
+}
+
+.alumni-table th,
+.alumni-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.alumni-table th {
+    background-color: #f2f7f8;
+    color: #0d0202;
+}
+
+.alumni-table td a {
+    color: #0a0a0b;
+    text-decoration: none;
+}
+
+.alumni-table td a:hover {
+    text-decoration: underline;
+}
+
+/* Custom styles for DataTable */
+.dataTables_wrapper {
+    margin: 20px 0;
+    color: #0a1936;
+    /* Match your color scheme */
+}
+
+.dataTables_length,
+.dataTables_filter {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.dataTables_length label,
+.dataTables_filter label {
+    font-weight: bold;
+    color: white;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 5px;
+    color: #0a1936;
+    /* Text color inside the input */
+}
+
+.dataTables_filter input {
+    width: 200px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.dataTables_paginate {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+.dataTables_paginate .paginate_button {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 2px;
+    background-color: #0a1936;
+    color: white;
+}
+
+.dataTables_paginate .paginate_button:hover {
+    background-color: #f0fae3;
+    color: #0a1936;
+}
+
+.dataTables_info {
+    margin-top: 10px;
+    color: white;
+    /* Set the info text color to white */
+}
+
+.dataTables_wrapper .dataTables_processing {
+    background-color: #0a1936;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Add alternating row colors for better readability */
+.dataTables_wrapper .dataTables_scrollBody table.dataTable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.dataTables_wrapper .dataTables_scrollBody table.dataTable tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Style the table header */
+.dataTables_wrapper .dataTables_scrollBody table.dataTable thead th {
+    background-color: #0a1936;
+    color: #ffffff;
+    border: none;
+    text-align: left;
+}
+
+
+
+/* Style for the filter container */
+.filter-container {
+    margin: 20px 0;
+}
+
+/* Style for the filter label */
+.filter-container label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #0a1936;
+    /* Text color for label */
+}
+
+/* Style for the select element */
+.filter-container select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #0a1936;
+    /* Background color for the dropdown */
+    color: #ffffff;
+    /* Text color for the dropdown */
+}
+
+/* Style for the dropdown options */
+.filter-container select option {
+    background-color: #0a1936;
+    /* Background color for options */
+    color: #ffffff;
+    /* Text color for options */
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #0A1936;
+    color: #F0FAE3;
+    padding: 50px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0A1936;
+    color: #F0FAE3;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+.footer-section p,
+.footer-section ul {
+    text-align: justify;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    display: table;
+    /* Centers the ul */
+    margin: 0 auto;
+    /* Ensures ul is centered */
+}
+
+.footer-section ul li {
+    text-align: left;
+    /* Aligns text to the left */
+    margin: 5px 0;
+    /* Adds margin to li elements */
+}
+
+.footer-section ul li:hover {
+    text-decoration: underline;
+}
+
+.footer-section ul li a {
+    color: #F0FAE3;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #25D366;
+    /* Changes color on hover */
+}
+
+.fas.fa-map-marker-alt:hover {
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}

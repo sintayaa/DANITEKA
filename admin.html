@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="scripts/user.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .sidebar {
+        width: 250px;
+        height: 100vh;
+        background-color: #2c3e50;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .sidebar-header {
+        padding: 20px;
+        background-color: #1a252f;
+        text-align: center;
+      }
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .sidebar-menu li {
+        padding: 15px 20px;
+      }
+      .sidebar-menu li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+      }
+      .sidebar-menu li a:hover,
+      .sidebar-menu li a.active {
+        background-color: #1a252f;
+      }
+      .main-content {
+        margin-left: 250px;
+        padding: 20px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+      }
+      .cards {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .card {
+        flex: 1;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        color: black;
+      }
+      .section {
+        display: none;
+      }
+      .section.active {
+        display: block;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-group button {
+        padding: 10px 20px;
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .form-group button:hover {
+        background-color: #1a252f;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .news-item {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .news-item img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3>Admin Dashboard</h3>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#dashboard" class="active"
+            ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+          >
+        </li>
+        <li>
+          <a href="berita_admin.html"><i class="fas fa-cog"></i> Berita</a>
+        </li>
+        <li>
+          <a href="index.html" id="logoutLink"
+            ><i class="fas fa-sign-out-alt"></i> Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="header">
+        <h2>Dashboard</h2>
+        <div class="user-info">
+          <span>Admin</span>
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+      <div class="content">
+        <div id="dashboard" class="section active">
+          <h2>Daftar User Terdaftar</h2>
+          <table id="userTable" border="1">
+            <!-- Daftar user akan ditampilkan di sini -->
+          </table>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              displayRegisteredUsers();
+            });
+          </script>
+        </div>
+        <div id="settings" class="section">
+          <div class="container mt-5">
+            <form id="uploadForm">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="content">Content</label>
+                <textarea
+                  class="form-control"
+                  id="content"
+                  name="content"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="image">Image File</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="image"
+                  name="image"
+                  accept="image/*"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+            <!-- News list -->
+            <div id="newsList"></div>
+          </div>
+        </div>
+        <div id="logout" class="section">
+          <h2>Logout</h2>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dashboardData = {
+          totalUsers: 3,
+          activeUsers: 1,
+        };
+
+        document.getElementById("totalUsers").textContent =
+          dashboardData.totalUsers;
+        document.getElementById("activeUsers").textContent =
+          dashboardData.activeUsers;
+
+        function displayRegisteredUsers(users) {
+          const userTable = document.getElementById("userTable");
+          let tableHTML = "<tr><th>Name</th><th>Email</th></tr>";
+
+          users.forEach((user) => {
+            tableHTML += `<tr><td>${user.name}</td><td>${user.email}</td></tr>`;
+          });
+
+          userTable.innerHTML = tableHTML;
+        }
+
+        const links = document.querySelectorAll(".sidebar-menu li a");
+        links.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+
+            document.querySelectorAll(".section").forEach((section) => {
+              section.classList.remove("active");
+            });
+            links.forEach((link) => {
+              link.classList.remove("active");
+            });
+
+            document.getElementById(targetId).classList.add("active");
+            this.classList.add("active");
+
+            if (targetId === "settings") {
+              loadNewsFromLocalStorage();
+            }
+          });
+        });
+
+        document
+          .getElementById("uploadForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+            const image = document.getElementById("image").files[0];
+
+            if (title && content && image) {
+              const newsItem = {
+                title: title,
+                content: content,
+                imageUrl: URL.createObjectURL(image),
+              };
+
+              saveNewsToLocalStorage(newsItem);
+              loadNewsFromLocalStorage();
+
+              document.getElementById("uploadForm").reset();
+            } else {
+              alert("Please fill out all fields.");
+            }
+          });
+
+        function saveNewsToLocalStorage(newsItem) {
+          let newsList = JSON.parse(localStorage.getItem("newsList")) || [];
+          newsList.push(newsItem);
+          localStorage.setItem("newsList", JSON.stringify(newsList));
+          syncNewsToBeritaHtml();
+        }
+
+        function loadNewsFromLocalStorage() {
+          const newsListContainer = document.getElementById("newsList");
+          newsListContainer.innerHTML = "";
+
+          const newsList = JSON.parse(localStorage.getItem("newsList")) || [];
+
+          newsList.forEach((newsItem) => {
+            const newsElement = document.createElement("div");
+            newsElement.classList.add("news-item");
+
+            newsElement.innerHTML = `
+              <h3>${newsItem.title}</h3>
+              <p>${newsItem.content}</p>
+              <img src="${newsItem.imageUrl}" alt="${newsItem.title}" />
+            `;
+
+            newsListContainer.appendChild(newsElement);
+          });
+        }
+
+        function syncNewsToBeritaHtml() {
+          const newsList = JSON.parse(localStorage.getItem("newsList")) || [];
+
+          const beritaContent = newsList
+            .map(
+              (newsItem) => `
+            <div class="news-item">
+              <h3>${newsItem.title}</h3>
+              <p>${newsItem.content}</p>
+              <img src="${newsItem.imageUrl}" alt="${newsItem.title}" />
+            </div>
+          `,
+            )
+            .join("");
+
+          // Save this content to berita.html
+          const xhr = new XMLHttpRequest();
+          xhr.open("POST", "/path-to-your-backend-api", true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.send(JSON.stringify({ beritaContent }));
+        }
+
+        // Redirect to index.html when logout link is clicked
+        document
+          .getElementById("logoutLink")
+          .addEventListener("click", function () {
+            window.location.href = "index.html";
+          });
+
+        // Initial load of news if the settings page is the first view
+        if (document.getElementById("settings").classList.contains("active")) {
+          loadNewsFromLocalStorage();
+        }
+      });
+    </script>
+  </body>
+</html>

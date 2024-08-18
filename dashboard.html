@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daniteka | Dashboard</title>
+        <link rel="stylesheet" href="styles/dashboard.css" />
+        <link rel="shortcut icon" href="images/Fav-icon 4.svg" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <script src="scripts/user.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navdiv">
+                    <div class="logo"><a href="#">DANITEKA</a></div>
+                    <ul>
+                        <li><a href="indexlogin.html">Beranda</a></li>
+                        <li><a href="beritalogin.html">Berita</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="alumnilogin.html">Alumni</a></li>
+                        <li class="dropdown">
+                            <img
+                                src="images/profil1.png"
+                                alt="Dropdown"
+                                class="dropbtn"
+                            />
+                            <div class="dropdown-content">
+                                <a href="#" id="namaAlumni" class="profile"
+                                    >Nama Alumni</a
+                                >
+                                <a
+                                    href="#"
+                                    id="btnkeluar"
+                                    class="logout"
+                                    onclick="logoutUser()"
+                                    >Keluar</a
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="container">
+                <h1 id="dashboardTitle">Nama Alumni</h1>
+                <form action="" class="form-dashboard">
+                    <label for="nama">Nama</label>
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Nama"
+                    /><br />
+                    <label for="nim">NIM</label>
+                    <input
+                        type="text"
+                        id="nim"
+                        name="nim"
+                        placeholder="NIM"
+                        readonly
+                    /><br />
+                    <label for="tahunAkt">Tahun Angkatan</label>
+                    <input type="text" id="tahunAkt" name="tahunAkt" /><br />
+                    <label for="jk">Jenis Kelamin</label>
+                    <select name="jeniskelamin" id="jk">
+                        <option value="perempuan">Perempuan</option>
+                        <option value="lakilaki">Laki-Laki</option></select
+                    ><br />
+                    <label for="ttl">TTL</label>
+                    <input type="date" name="date" id="ttl" /><br />
+                    <label for="pekerjaan">Pekerjaan</label>
+                    <input type="text" name="pekerjaan" id="pekerjaan" /><br />
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" /><br />
+                    <label for="password">Kata Sandi</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                    /><br />
+                    <label for="profil">Foto Profil</label>
+                    <input type="file" name="profil" id="profil" /><br />
+                    <div class="btn-container">
+                        <button
+                            type="button"
+                            class="btn_simpan"
+                            onclick="saveUserData()"
+                        >
+                            Simpan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>
+                        Selamat datang di situs resmi Alumni Teknik Informatika.
+                        Kami adalah komunitas yang berdedikasi untuk
+                        menghubungkan alumni, mendukung pengembangan karir, dan
+                        memajukan pendidikan teknologi dan industri.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Media Sosial</h3>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://www.youtube.com/@mediapolnep"
+                                aria-label="Youtube"
+                                target="_blank"
+                                ><i class="fab fa-youtube"></i> mediapolnep</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.tiktok.com/@mediapolnep"
+                                aria-label="Tiktok"
+                                target="_blank"
+                                ><i class="fab fa-tiktok"></i> mediapolnep</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/teknik.informatika.polnep/"
+                                aria-label="Instagram"
+                                target="_blank"
+                                ><i class="fab fa-instagram"></i>
+                                teknik.informatika.polnep</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li>
+                            <a href="#" aria-label="Email"
+                                ><i class="fas fa-envelope"></i>
+                                kampus@polnep.ac.id</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Phone"
+                                ><i class="fas fa-phone"></i> +62 561 736180</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://wa.me/6281256074059"
+                                aria-label="WhatsApp"
+                                target="_blank"
+                            >
+                                <i class="fab fa-whatsapp"></i> +6281256074059
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://maps.app.goo.gl/ujg8vtREhgAZ4Ug8A"
+                                aria-label="Address"
+                                target="_blank"
+                                ><i class="fas fa-map-marker-alt"></i> Jl.
+                                Jenderal Ahmad Yani, <br />Bansir Laut,
+                                Tenggara, <br />Kota Pontianak, <br />Kalimantan
+                                Barat</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Daniteka. All rights reserved.</p>
+            </div>
+        </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                displayUserData();
+                loadProfileImage();
+            });
+        </script>
+    </body>
+</html>

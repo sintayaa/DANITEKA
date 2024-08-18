@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daniteka | Login</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="styles/login.css" />
+    </head>
+    <body>
+        <div class="container-fluid vh-100 d-flex">
+            <div class="row flex-grow-1 w-100">
+                <div
+                    class="col-lg-6 d-flex align-items-center justify-content-center layar-kiri"
+                >
+                    <div class="login-form">
+                        <form id="loginForm">
+                            <input
+                                type="text"
+                                id="logUsername"
+                                placeholder="NIM"
+                                required
+                            />
+                            <input
+                                type="password"
+                                id="logPassword"
+                                placeholder="Kata Sandi"
+                                required
+                            />
+                            <button type="submit" class="btn btn-primary">
+                                Masuk
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div
+                    class="col-lg-6 d-flex align-items-center justify-content-center layar-kanan"
+                >
+                    <div>
+                        <h1>DANITEKA</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <script>
+            function sanitizeInput(input) {
+                return input.replace(/<[^>]*>?/gm, ""); // Sanitize input
+            }
+
+            function hashPassword(password) {
+                return CryptoJS.SHA256(password).toString(); // Hash password
+            }
+
+            function loginUser() {
+                const username = sanitizeInput(
+                    document.getElementById("logUsername").value,
+                );
+                const password = sanitizeInput(
+                    document.getElementById("logPassword").value,
+                );
+
+                const user = JSON.parse(localStorage.getItem(username));
+                const hashedPassword = hashPassword(password);
+
+                if (user && user.password === hashedPassword) {
+                    alert("Login berhasil!");
+                    localStorage.setItem(
+                        "loggedInUser",
+                        JSON.stringify({
+                            username: username,
+                            fullname: user.fullname,
+                        }),
+                    );
+                    window.location.href = "./admin.html"; // Redirect to dashboard page after login
+                } else {
+                    alert("Username atau password salah!");
+                }
+            }
+
+            document
+                .getElementById("loginForm")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    loginUser();
+                });
+        </script> -->
+        <!-- Include CryptoJS library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+        <script src="scripts/login.js"></script>
+    </body>
+</html>

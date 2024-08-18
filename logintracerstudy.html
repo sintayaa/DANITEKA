@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daniteka | Login</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="styles/login.css" />
+        <script src="scripts/user.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid vh-100 d-flex">
+            <div class="row flex-grow-1 w-100">
+                <div
+                    class="col-lg-6 d-flex align-items-center justify-content-center layar-kiri"
+                >
+                    <div class="login-form">
+                        <form id="loginForm">
+                            <input
+                                type="text"
+                                id="logUsername"
+                                placeholder="NIM"
+                                required
+                            />
+                            <input
+                                type="password"
+                                id="logPassword"
+                                placeholder="Kata Sandi"
+                                required
+                            />
+                            <p class="center-align">
+                                <a href="#" onclick="resetPassword()"
+                                    ><span>Lupa Kata Sandi?</span></a
+                                >
+                            </p>
+                            <button type="submit">Masuk</button>
+                            <p>
+                                Belum punya akun?
+                                <a href="daftar.html" id="daftarLink"
+                                    ><span>Daftar sekarang</span></a
+                                >
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div
+                    class="col-lg-6 d-flex align-items-center justify-content-center layar-kanan"
+                >
+                    <div>
+                        <h1>DANITEKA</h1>
+                        <p>
+                            Selamat datang di situs resmi Alumni Teknik
+                            Informatika. Kami adalah komunitas yang berdedikasi
+                            untuk menghubungkan alumni, mendukung pengembangan
+                            karir, dan memajukan pendidikan teknologi dan
+                            industri.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document
+                .getElementById("loginForm")
+                .addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    loginTS(); // Memanggil fungsi loginTS dari user.js saat form login disubmit
+                });
+        </script>
+    </body>
+</html>

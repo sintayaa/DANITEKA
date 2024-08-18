@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Daniteka | Forum</title>
+        <link rel="stylesheet" href="styles/beranda.css" />
+        <link rel="shortcut icon" href="images/Fav-icon 4.svg" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navdiv">
+                    <div class="logo"><a href="#">DANITEKA</a></div>
+                    <ul>
+                        <li><a href="beranda.html">Beranda</a></li>
+                        <li><a href="berita.html">Berita</a></li>
+                        <li><a class="aktif" href="forum.html">Forum</a></li>
+                        <li><a href="alumni.html">Alumni</a></li>
+                        <div class="btnlogin">
+                            <li><a href="login.html">Masuk</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container discord-widget-container">
+            <iframe
+                src="https://discord.com/widget?id=1267325860210282608&theme=dark"
+                width="500"
+                height="500"
+                allowtransparency="true"
+                frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            ></iframe>
+            <br />
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>
+                        Selamat datang di situs resmi Alumni Teknik Informatika.
+                        Kami adalah komunitas yang berdedikasi untuk
+                        menghubungkan alumni, mendukung pengembangan karir, dan
+                        memajukan pendidikan teknologi dan industri.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Media Sosial</h3>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://www.youtube.com/@mediapolnep"
+                                aria-label="Youtube"
+                                target="_blank"
+                                ><i class="fab fa-youtube"></i> mediapolnep</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.tiktok.com/@mediapolnep"
+                                aria-label="Tiktok"
+                                target="_blank"
+                                ><i class="fab fa-tiktok"></i> mediapolnep</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.instagram.com/teknik.informatika.polnep/"
+                                aria-label="Instagram"
+                                target="_blank"
+                                ><i class="fab fa-instagram"></i>
+                                teknik.informatika.polnep</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Hubungi Kami</h3>
+                    <ul>
+                        <li>
+                            <a href="#" aria-label="Email"
+                                ><i class="fas fa-envelope"></i>
+                                kampus@polnep.ac.id</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Phone"
+                                ><i class="fas fa-phone"></i> +62 561 736180</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://wa.me/6281256074059"
+                                aria-label="WhatsApp"
+                                target="_blank"
+                            >
+                                <i class="fab fa-whatsapp"></i> +6281256074059
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://maps.app.goo.gl/ujg8vtREhgAZ4Ug8A"
+                                aria-label="Address"
+                                target="_blank"
+                                ><i class="fas fa-map-marker-alt"></i> Jl.
+                                Jenderal Ahmad Yani, <br />Bansir Laut,
+                                Tenggara, <br />Kota Pontianak, <br />Kalimantan
+                                Barat</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Daniteka. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <button onclick="scrollToTop()" id="scrollUpBtn" title="Go to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <script>
+            // Scroll to top button
+            const scrollToTopBtn = document.getElementById("scrollUpBtn");
+
+            window.onscroll = function () {
+                if (
+                    document.body.scrollTop > 20 ||
+                    document.documentElement.scrollTop > 20
+                ) {
+                    scrollToTopBtn.style.display = "block";
+                } else {
+                    scrollToTopBtn.style.display = "none";
+                }
+            };
+
+            function scrollToTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+    </body>
+</html>
